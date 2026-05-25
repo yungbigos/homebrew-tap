@@ -6,7 +6,10 @@ class SupabaseWorktree < Formula
   license "MIT"
   version "0.1.0"
 
-  depends_on "supabase/tap/supabase"
+  # `supabase` is intentionally not a depends_on: it ships from both
+  # homebrew/core and supabase/tap, and depending on either conflicts with
+  # users who installed it via the other tap. Users must install supabase
+  # themselves (either tap works).
   depends_on "libpq" # provides psql and pg_restore
 
   def install
