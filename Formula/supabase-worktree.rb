@@ -1,10 +1,9 @@
 class SupabaseWorktree < Formula
   desc "Isolated Supabase stack per project or git worktree"
   homepage "https://github.com/yungbigos/supabase-worktree"
-  url "https://github.com/yungbigos/supabase-worktree/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "110b561cbf702166ec05d430173aeab56671b77e019d7db21d600b9d42bcd431"
+  url "https://github.com/yungbigos/supabase-worktree/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "ef2d01f8d871b0048f039d895199cb12e26805f61ad3ca562c198067bf14a6bc"
   license "MIT"
-  version "0.2.3"
 
   # `supabase` is intentionally not a depends_on: it ships from both
   # homebrew/core and supabase/tap, and depending on either conflicts with
@@ -19,7 +18,7 @@ class SupabaseWorktree < Formula
   end
 
   test do
-    assert_match "supabase-worktree 0.2.3", shell_output("#{bin}/supabase-worktree version")
+    assert_match "supabase-worktree 0.5.0", shell_output("#{bin}/supabase-worktree version")
     assert_match "Usage:", shell_output("#{bin}/supabase-worktree help")
   end
 end
